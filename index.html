@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SheShield | Women's Safety Platform</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff7fa;
+    color: #333;
+}
+
+/* NAVBAR */
+
+nav {
+    background: #781b50;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffb6d3;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #ffb6d3;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 540px;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    background: linear-gradient(135deg, #fff0f6, #fbd2e3);
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    color: #781b50;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #e83e8c;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    color: #555;
+}
+
+.primary-btn {
+    background: #781b50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #a52b70;
+}
+
+.hero-card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px #00000015;
+    width: 300px;
+}
+
+.hero-icon {
+    font-size: 90px;
+    margin-bottom: 15px;
+}
+
+/* SOS */
+
+.sos-section {
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.section-title {
+    color: #781b50;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.sos-button {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #e60045;
+    color: white;
+    border: 8px solid #ffc0d4;
+    font-size: 27px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 30px;
+    box-shadow: 0 0 25px #e6004550;
+    transition: 0.3s;
+}
+
+.sos-button:hover {
+    transform: scale(1.08);
+}
+
+#sosStatus {
+    font-weight: bold;
+    color: #781b50;
+    margin-top: 15px;
+}
+
+/* FEATURES */
+
+.features {
+    padding: 65px 8%;
+    background: white;
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background: #fff4f8;
+    padding: 30px 20px;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px #00000010;
+}
+
+.feature-card .icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #781b50;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    line-height: 1.6;
+    color: #666;
+}
+
+.feature-card button {
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: #781b50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* CONTACTS */
+
+.contacts {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #00000010;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline-color: #e83e8c;
+}
+
+.action-btn {
+    background: #781b50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff0f6;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 12px;
+    gap: 10px;
+}
+
+.contact-item button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #e60045;
+    color: white;
+}
+
+/* LOCATION */
+
+.location {
+    background: #fff0f6;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.location-box {
+    background: white;
+    max-width: 600px;
+    padding: 30px;
+    margin: 25px auto;
+    border-radius: 18px;
+}
+
+#locationResult {
+    margin-top: 20px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* SAFETY TIPS */
+
+.tips {
+    padding: 65px 8%;
+    background: white;
+    text-align: center;
+}
+
+.tips-list {
+    max-width: 750px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.tip {
+    background: #fff4f8;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-left: 5px solid #e83e8c;
+    border-radius: 8px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #781b50;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    line-height: 1.8;
+}
+
+footer span {
+    color: #ffb6d3;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">🛡️ She<span>Shield</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#tips">Safety Tips</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Your Safety.<br><span>Our Priority.</span></h1>
+
+        <p>
+            SheShield is a women's safety platform designed
+            to provide quick access to emergency assistance,
+            trusted contacts and location sharing.
+        </p>
+
+        <a href="#sos">
+            <button class="primary-btn">Explore Emergency Support</button>
+        </a>
+    </div>
+
+    <div class="hero-card">
+        <div class="hero-icon">🛡️</div>
+        <h2>Stay Safe, Stay Strong</h2>
+        <p>Your safety matters every second.</p>
+    </div>
+
+</section>
+
+<!-- SOS SECTION -->
+
+<section class="sos-section" id="sos">
+
+    <h2 class="section-title">Emergency SOS</h2>
+
+    <p>Press the button when you need emergency assistance.</p>
+
+    <button class="sos-button" onclick="triggerSOS()">
+        SOS
+    </button>
+
+    <p id="sosStatus">
+        Emergency system ready.
+    </p>
+
+    <p style="margin-top:12px;color:#777;font-size:13px">
+        This demo requires confirmation before sharing information.
+    </p>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features" id="features">
+
+    <h2 class="section-title">Our Safety Features</h2>
+
+    <p>Tools designed to help you stay connected and safe.</p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="icon">🚨</div>
+            <h3>Emergency SOS</h3>
+            <p>Quickly access your emergency assistance options.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">📍</div>
+            <h3>Live Location</h3>
+            <p>Get your current GPS location and share it with trusted people.</p>
+            <button onclick="getLocation()">Get Location</button>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">📞</div>
+            <h3>Emergency Call</h3>
+            <p>Quick access to India's emergency helpline.</p>
+            <button onclick="callEmergency()">Call 112</button>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">👥</div>
+            <h3>Trusted Contacts</h3>
+            <p>Add and manage your emergency contact list.</p>
+            <button onclick="document.getElementById('contacts').scrollIntoView()">Manage Contacts</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACTS -->
+
+<section class="contacts" id="contacts">
+
+    <h2 class="section-title">Emergency Contacts</h2>
+
+    <p>Add people you trust for quick access during an emergency.</p>
+
+    <div class="contact-box">
+
+        <input type="text" id="contactName"
+        placeholder="Enter contact name">
+
+        <input type="tel" id="contactPhone"
+        placeholder="Enter phone number">
+
+        <button class="action-btn" onclick="addContact()">
+            + Add Contact
+        </button>
+
+        <div id="contactList"></div>
+
+    </div>
+
+</section>
+
+<!-- LOCATION -->
+
+<section class="location" id="location">
+
+    <h2 class="section-title">Location Assistance</h2>
+
+    <p>Find your current location using GPS.</p>
+
+    <div class="location-box">
+
+        <div style="font-size:50px">📍</div>
+
+        <h3>Your Current Location</h3>
+
+        <button class="action-btn" onclick="getLocation()">
+            Detect My Location
+        </button>
+
+        <div id="locationResult">
+            Location has not been detected yet.
+        </div>
+
+        <button class="action-btn" onclick="shareLocation()">
+            Share My Location
+        </button>
+
+    </div>
+
+</section>
+
+<!-- SAFETY TIPS -->
+
+<section class="tips" id="tips">
+
+    <h2 class="section-title">Personal Safety Tips</h2>
+
+    <div class="tips-list">
+
+        <div class="tip">
+            <strong>📱 Keep your phone charged</strong>
+            <p>Maintain sufficient battery when travelling.</p>
+        </div>
+
+        <div class="tip">
+            <strong>📍 Share your travel details</strong>
+            <p>Inform trusted contacts about your journey.</p>
+        </div>
+
+        <div class="tip">
+            <strong>🚶 Stay aware of surroundings</strong>
+            <p>Be attentive to your surroundings while travelling.</p>
+        </div>
+
+        <div class="tip">
+            <strong>☎️ Save emergency numbers</strong>
+            <p>Keep important emergency contacts accessible.</p>
+        </div>
+
+        <div class="tip">
+            <strong>🛡️ Trust your instincts</strong>
+            <p>If a situation feels unsafe, move to a safer public place and seek help.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>🛡️ She<span>Shield</span></h2>
+
+    <p>Empowering Women. Ensuring Safety.</p>
+
+    <p>Emergency Helpline: 112 (India)</p>
+
+    <p>© 2026 SheShield. All Rights Reserved.</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// CONTACT STORAGE
+
+let contacts = [];
+
+try {
+    contacts = JSON.parse(
+        localStorage.getItem("sheShieldContacts")
+    ) || [];
+} catch (error) {
+    contacts = [];
+}
+
+function saveContacts() {
+    localStorage.setItem(
+        "sheShieldContacts",
+        JSON.stringify(contacts)
+    );
+}
+
+// ADD CONTACT
+
+function addContact() {
+
+    const name = document.getElementById("contactName").value.trim();
+    const phone = document.getElementById("contactPhone").value.trim();
+
+    if (!name || !phone) {
+        alert("Please enter both name and phone number.");
+        return;
+    }
+
+    if (!/^\+?[0-9\s-]{7,15}$/.test(phone)) {
+        alert("Please enter a valid phone number.");
+        return;
+    }
+
+    contacts.push({
+        name: name,
+        phone: phone
+    });
+
+    saveContacts();
+    displayContacts();
+
+    document.getElementById("contactName").value = "";
+    document.getElementById("contactPhone").value = "";
+}
+
+// DISPLAY CONTACTS
+
+function displayContacts() {
+
+    const list = document.getElementById("contactList");
+
+    list.innerHTML = "";
+
+    contacts.forEach((contact, index) => {
+
+        const item = document.createElement("div");
+        item.className = "contact-item";
+
+        const details = document.createElement("div");
+        const name = document.createElement("strong");
+        const phone = document.createElement("p");
+
+        name.textContent = contact.name;
+        phone.textContent = contact.phone;
+
+        details.append(name, phone);
+
+        const call = document.createElement("button");
+        call.textContent = "Call";
+        call.onclick = () => {
+            window.location.href = "tel:" + contact.phone;
+        };
+
+        const remove = document.createElement("button");
+        remove.textContent = "Delete";
+        remove.className = "delete-btn";
+        remove.onclick = () => {
+            contacts.splice(index, 1);
+            saveContacts();
+            displayContacts();
+        };
+
+        item.append(details, call, remove);
+        list.appendChild(item);
+    });
+}
+
+// GET LOCATION
+
+let currentLocation = null;
+
+function getLocation() {
+
+    const result = document.getElementById("locationResult");
+
+    if (!navigator.geolocation) {
+        result.textContent = "Geolocation is not supported.";
+        return;
+    }
+
+    result.textContent = "Detecting your location...";
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            currentLocation = {
+                latitude: lat,
+                longitude: lon
+            };
+
+            result.innerHTML = `
+                <strong>Latitude:</strong> ${lat}<br>
+                <strong>Longitude:</strong> ${lon}<br>
+                <a target="_blank"
+                href="https://www.google.com/maps?q=${lat},${lon}">
+                View on Google Maps
+                </a>
+            `;
+        },
+
+        function(error) {
+
+            result.textContent =
+                "Unable to get location. Please allow location permission.";
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 15000
+        }
+    );
+}
+
+// SHARE LOCATION
+
+async function shareLocation() {
+
+    if (!currentLocation) {
+        alert("Please detect your location first.");
+        return;
+    }
+
+    const url =
+        `https://www.google.com/maps?q=${currentLocation.latitude},${currentLocation.longitude}`;
+
+    const message = "My current location: " + url;
+
+    if (navigator.share) {
+
+        try {
+            await navigator.share({
+                title: "SheShield Emergency Location",
+                text: message,
+                url: url
+            });
+        } catch (error) {
+            console.log("Sharing cancelled.");
+        }
+
+    } else if (navigator.clipboard) {
+
+        try {
+            await navigator.clipboard.writeText(message);
+            alert("Location link copied. You can share it with a trusted contact.");
+        } catch (error) {
+            alert(message);
+        }
+
+    } else {
+        alert(message);
+    }
+}
+
+// EMERGENCY CALL
+
+function callEmergency() {
+
+    const confirmCall = confirm(
+        "Do you want to open your phone dialer to call India's emergency number 112?"
+    );
+
+    if (confirmCall) {
+        window.location.href = "tel:112";
+    }
+}
+
+// SOS FUNCTION
+
+async function triggerSOS() {
+
+    const confirmSOS = confirm(
+        "Emergency assistance requested. Do you want to continue?"
+    );
+
+    if (!confirmSOS) {
+        return;
+    }
+
+    const status = document.getElementById("sosStatus");
+
+    status.textContent = "Getting your location...";
+
+    if (!navigator.geolocation) {
+        status.textContent =
+            "Location unavailable. Please use the emergency call option.";
+        alert("For emergency assistance in India, call 112.");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        async function(position) {
+
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            const mapLink =
+                `https://www.google.com/maps?q=${lat},${lon}`;
+
+            status.textContent =
+                "Location captured. Choose how to get assistance.";
+
+            const sendAlert = confirm(
+                "Your location has been detected. Share it with a trusted contact?"
+            );
+
+            if (sendAlert) {
+
+                const message =
+                    "EMERGENCY! I need help. My location: " + mapLink;
+
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: "SheShield SOS Alert",
+                            text: message
+                        });
+                    } catch (error) {
+                        console.log("Sharing cancelled.");
+                    }
+                } else {
+                    try {
+                        await navigator.clipboard.writeText(message);
+                        alert("Emergency location copied to clipboard.");
+                    } catch (error) {
+                        alert(message);
+                    }
+                }
+            }
+
+            const callNow = confirm(
+                "Do you want to open your dialer to call emergency services at 112?"
+            );
+
+            if (callNow) {
+                window.location.href = "tel:112";
+            }
+        },
+
+        function(error) {
+
+            status.textContent =
+                "Unable to detect location. You can still call 112.";
+
+            if (confirm("Would you like to open your dialer to call 112?")) {
+                window.location.href = "tel:112";
+            }
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 15000
+        }
+    );
+}
+
+// INITIALIZE
+
+displayContacts();
+
+</script>
+
+</body>
+</html>
